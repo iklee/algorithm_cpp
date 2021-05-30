@@ -19,8 +19,11 @@ for(int i=1; i <=num_node; i++)
 - 
 
 # Visual Studio 설정
-- [SDL설정 끄기](https://royal-jelly.tistory.com/62)
-- 디버깅 창이 꺼질 때
+- 주석 단축키: Ctrl+k+c(설정), Ctrl+k+u(해제)
+- freopen 사용하기 위해, SDL 설정을 끈다. 
+- [SDL 검사 끄기](https://royal-jelly.tistory.com/62) : 프로젝트 - 속성 - 구성 속성 - C/C++ - 일반 - SDL 검사 - 아니요
+- SDL 검사 끄기 대신 #define _CRT_SECURE_NO_WARNINGS 를 소스에 입력해도 된다.
+- 실행 창이 자동으로 닫히면, Ctrl + F5로 실행해 보자.
 
 
 ## 소스 코드
