@@ -11,10 +11,11 @@ clang++-7 -pthread -std=c++17 main.cpp
 - 변수명으로 dist나 d를 사용한다.
 - Node 처리와 같이 1부터 시작하는 배열은 1부터 처리하고 배열은 +1 더해서 만들자
 - 배열을 1부터 시작했으면, <= 를 사용하여 처리하자.
-- ```
+```
 const int MAX_NODE = 500;
 int graph[MAX_NODE+1][MAX_NODE+1];
-for(int i=1; i <=num_node; i++)
+for(int i=1; i <=num_node; i++) 
+```
 - 
 
 # Visual Studio 설정
