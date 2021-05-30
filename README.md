@@ -19,10 +19,10 @@ for(int i=1; i <=num_node; i++)
 - 
 
 # Visual Studio 설정
-- [SDL설정 끄기] (https://royal-jelly.tistory.com/62)
+- [SDL설정 끄기](https://royal-jelly.tistory.com/62)
 - 디버깅 창이 꺼질 때
 
 
 ## 소스 코드
 - [다익스트라 알고리즘](https://github.com/iklee/algorithm_cpp/blob/main/dijkstra/main.cpp)
-- [플로이드-워셜 알고리즘] (https://github.com/iklee/algorithm_cpp/blob/main/Floyd-Warshall/main.cpp)
+- [플로이드-워셜 알고리즘](https://github.com/iklee/algorithm_cpp/blob/main/Floyd-Warshall/main.cpp)
