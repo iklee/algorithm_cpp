@@ -15,50 +15,49 @@ const int INF = 123456789;
 
 void dijkstra(int start)
 {
-	priority_queue<pair<int, int>> queue;
-	queue.push(make_pair(0, start));
-
+  priority_queue<pair<int, int>> queue;
+  queue.push(make_pair(0, start));
+  
   fill_n(dist, MAX_NODE + 1, INF);
-	dist[start] = 0;  // start 값은 0 으로 설정해야 함.
+  dist[start] = 0;  // start 값은 0 으로 설정해야 함.
 
-	while (!queue.empty())
-	{
-		int now_value = -queue.top().first;  // queue에서는 first가 value
-		int now_node = queue.top().second;
-		queue.pop();
+  while (!queue.empty()) {
+    int now_value = -queue.top().first;  // queue에서는 first가 value
+    int now_node = queue.top().second;
+    queue.pop();
 
-		if (dist[now_node] < now_value) continue;  // 연산량 줄이기, 이미 최소값 가진 거는 패쓰
+    if (dist[now_node] < now_value) continue;  // 연산량 줄이기, 이미 처리한 거는 skip
 
-		for (auto target : graph[now_node]) {
-			int target_node = target.first;  // graph 에서는 first가 node
-			int target_value = target.second;
+    for (auto target : graph[now_node]) {
+      int target_node = target.first;  // graph 에서는 first가 node
+      int target_value = target.second;
 
-			int next_value = now_value + target_value;
-			if (next_value < dist[target_node]) {
-				dist[target_node] = next_value;
-				queue.push(make_pair(-next_value, target_node));  // prior_queue는 디폴트로 값이 큰 값이 위에 있으니, 작은 값이 위에 있도록 처리
-			}
-		}
-	}
+      int next_value = now_value + target_value;
+      if (next_value < dist[target_node]) {
+        dist[target_node] = next_value;
+        queue.push(make_pair(-next_value, target_node));  // prior_queue는 디폴트로 값이 큰 값이 위에 있으니, 작은 값이 위에 있도록 처리
+      }
+    }
+  }
 }
 
 int main()
 {
-	freopen("data_1.txt", "r", stdin);
+  freopen("data_1.txt", "r", stdin);
 
-	cin >> num_node >> num_edge >> start_node;
+  cin >> num_node >> num_edge >> start_node;
 
-	int start, end, length;
-	for (int i = 0; i < num_edge; i++) {
-		cin >> start >> end >> length;
-		graph[start].push_back(make_pair(end, length));
-	}
+  int start, end, length;
+  for (int i = 0; i < num_edge; i++) {
+    cin >> start >> end >> length;
+    graph[start].push_back(make_pair(end, length));
+  }
 
-	dijkstra(1);
+  dijkstra(1);
 
-	for (int i = 1; i <= num_node; i++) {
-		cout << dist[i] << "\n";
-	}
+  for (int i = 1; i <= num_node; i++) {
+    cout << dist[i] << "\n";
+  }
 
-	return 0;
+  return 0;
 }
